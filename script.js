@@ -3,11 +3,8 @@ const todoInput = document.getElementById('todo-input');
 const addTodoBtn = document.getElementById('add-todo-btn');
 const todoList = document.getElementById('todo-list');
 
-// Initialize todo list
 let todos = [];
 let id = 0;
-
-// Function to add todo
 function addTodo(text) {
     const todo = {
         id: id++,
@@ -17,14 +14,11 @@ function addTodo(text) {
     todos.push(todo);
     renderTodoList();
 }
-
-// Function to delete todo
 function deleteTodo(id) {
     todos = todos.filter(todo => (link unavailable) !== id);
     renderTodoList();
 }
 
-// Function to toggle done status
 function toggleDone(id) {
     const todo = todos.find(todo => (link unavailable) === id);
     if (todo) {
@@ -32,8 +26,6 @@ function toggleDone(id) {
         renderTodoList();
     }
 }
-
-// Function to render todo list
 function renderTodoList() {
     todoList.innerHTML = '';
     todos.forEach(todo => {
@@ -55,7 +47,7 @@ function renderTodoList() {
     });
 }
 
-// Add event listener to add todo button
+
 addTodoBtn.addEventListener('click', () => {
     const todoText = todoInput.value.trim();
     if (todoText) {
